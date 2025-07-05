@@ -80,7 +80,7 @@ const categories = ["All", "Technology", "Marketing", "Finance", "Operations", "
     <section class="py-24 bg-surface-primary">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center max-w-4xl mx-auto">
-          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl mb-8">
             <div class="w-2 h-2 bg-semantic-purple rounded-full"></div>
             <span class="text-sm font-medium text-notion-700">Latest insights & updates</span>
           </div>
@@ -100,7 +100,7 @@ const categories = ["All", "Technology", "Marketing", "Finance", "Operations", "
     <!-- Featured Post -->
     <section class="py-16 bg-surface-secondary">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="bg-white rounded-3xl shadow-notion-lg border border-notion-200 overflow-hidden">
+        <div class="bg-white rounded-3xl border border-notion-200 overflow-hidden">
           <div class="grid lg:grid-cols-2 gap-0">
             <div class="bg-gradient-to-br from-semantic-blue to-semantic-purple h-64 lg:h-auto"></div>
             <div class="p-12">
@@ -158,22 +158,18 @@ const categories = ["All", "Technology", "Marketing", "Finance", "Operations", "
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
-            <article class="bg-white rounded-2xl shadow-notion border border-notion-200 overflow-hidden hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+            <article class="bg-white rounded-2xl border border-notion-200 overflow-hidden transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
               <div class={`h-48 bg-gradient-to-br from-${post.color} to-${post.color}/80`}></div>
-              
               <div class="p-8">
                 <div class={`inline-flex items-center space-x-2 bg-${post.color}/10 text-${post.color} px-3 py-1 rounded-lg text-sm font-medium mb-4`}>
                   {post.category}
                 </div>
-                
                 <h3 class="text-xl font-bold text-notion-900 mb-3 leading-tight">
                   {post.title}
                 </h3>
-                
                 <p class="text-notion-600 leading-relaxed mb-6">
                   {post.excerpt}
                 </p>
-                
                 <div class="flex items-center justify-between">
                   <div class="flex items-center space-x-3">
                     <div class={`w-8 h-8 bg-${post.color} rounded-full flex items-center justify-center`}>
@@ -184,7 +180,6 @@ const categories = ["All", "Technology", "Marketing", "Finance", "Operations", "
                       <div class="text-xs text-notion-500">{post.date} • {post.readTime}</div>
                     </div>
                   </div>
-                  
                   <a href="#" class="text-notion-600 hover:text-notion-900 transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -195,10 +190,9 @@ const categories = ["All", "Technology", "Marketing", "Finance", "Operations", "
             </article>
           ))}
         </div>
-        
         <!-- Load More -->
         <div class="text-center mt-16">
-          <button class="bg-notion-900 hover:bg-notion-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-notion hover:shadow-notion-md">
+          <button class="bg-notion-900 hover:bg-notion-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200">
             Load More Articles
           </button>
         </div>
@@ -208,7 +202,7 @@ const categories = ["All", "Technology", "Marketing", "Finance", "Operations", "
     <!-- Newsletter Signup -->
     <section class="py-24 bg-surface-primary">
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white">
           <h2 class="text-4xl font-bold mb-6">Stay in the loop</h2>
           <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
             Get the latest insights, tips, and updates delivered straight to your inbox.

@@ -88,7 +88,7 @@ const recentTopics = [
     <section class="py-24 bg-surface-primary">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center max-w-4xl mx-auto">
-          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl mb-8">
             <div class="w-2 h-2 bg-semantic-green rounded-full"></div>
             <span class="text-sm font-medium text-notion-700">Join the Community</span>
           </div>
@@ -128,18 +128,15 @@ const recentTopics = [
             A vibrant ecosystem of business owners, experts, and Tar app team members ready to help you succeed.
           </p>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {communityFeatures.map((feature, index) => (
-            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
-              <div class={`w-16 h-16 bg-${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-notion-sm`}>
+            <div class="bg-white rounded-2xl p-8 border border-notion-200 transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-${feature.color} rounded-2xl flex items-center justify-center mb-6`}>
                 <span class="text-2xl">{feature.icon}</span>
               </div>
-              
               <h3 class="text-2xl font-bold text-notion-900 mb-4 leading-tight">
                 {feature.title}
               </h3>
-              
               <p class="text-notion-600 leading-relaxed text-lg">
                 {feature.description}
               </p>
@@ -158,8 +155,7 @@ const recentTopics = [
             See what the community is talking about and join the conversation.
           </p>
         </div>
-
-        <div class="bg-white rounded-2xl shadow-notion border border-notion-200 overflow-hidden">
+        <div class="bg-white rounded-2xl border border-notion-200 overflow-hidden">
           {recentTopics.map((topic, index) => (
             <div class={`p-6 ${index !== recentTopics.length - 1 ? 'border-b border-notion-200' : ''} hover:bg-surface-hover transition-colors cursor-pointer`}>
               <div class="flex items-start justify-between">
@@ -182,7 +178,6 @@ const recentTopics = [
             </div>
           ))}
         </div>
-
         <div class="text-center mt-8">
           <button class="bg-semantic-green text-white px-8 py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors">
             View All Discussions
@@ -200,27 +195,26 @@ const recentTopics = [
             Help us maintain a welcoming and productive environment for everyone.
           </p>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+          <div class="bg-white rounded-2xl p-8 border border-notion-200">
             <h3 class="text-xl font-bold text-notion-900 mb-4">Be respectful</h3>
             <p class="text-notion-600">
               Treat all community members with respect and kindness. We're all here to learn and grow together.
             </p>
           </div>
-          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+          <div class="bg-white rounded-2xl p-8 border border-notion-200">
             <h3 class="text-xl font-bold text-notion-900 mb-4">Stay on topic</h3>
             <p class="text-notion-600">
               Keep discussions relevant to Tar app and business topics. This helps everyone find the information they need.
             </p>
           </div>
-          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+          <div class="bg-white rounded-2xl p-8 border border-notion-200">
             <h3 class="text-xl font-bold text-notion-900 mb-4">Share knowledge</h3>
             <p class="text-notion-600">
               Share your experiences and insights. Your knowledge can help other business owners succeed.
             </p>
           </div>
-          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+          <div class="bg-white rounded-2xl p-8 border border-notion-200">
             <h3 class="text-xl font-bold text-notion-900 mb-4">No spam</h3>
             <p class="text-notion-600">
               Avoid promotional content and spam. Focus on providing value to the community.
@@ -233,13 +227,13 @@ const recentTopics = [
     <!-- CTA Section -->
     <section class="py-24 bg-surface-secondary">
       <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white">
           <h2 class="text-4xl font-bold mb-6">Ready to join the community?</h2>
           <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
             Connect with thousands of business owners, get expert advice, and grow your business with the Tar app community.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg shadow-notion">
+            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg">
               Join Community
             </button>
             <button class="border border-notion-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-notion-800 transition-colors text-lg">

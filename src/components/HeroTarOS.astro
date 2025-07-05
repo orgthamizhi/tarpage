@@ -4,15 +4,14 @@
 <section class="pt-24 pb-20 bg-white">
 
   <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
-    <!-- Game Control Icons at Top Left -->
-    <div class="absolute top-0 left-0 w-40 h-32">
-      <div class="absolute top-0 left-0 w-40 h-32 flex items-center justify-around">
+    <!-- Game Control Icons: Responsive Position -->
+    <div class="emoji-icons-container">
+      <div class="emoji-icons-inner">
         <span class="text-3xl emoji-icon" style="--animation-delay: 0s;">🎮</span>
         <span class="text-3xl emoji-icon" style="--animation-delay: 0.5s;">🕹️</span>
         <span class="text-3xl emoji-icon" style="--animation-delay: 1s;">🤖</span>
         <span class="text-3xl emoji-icon" style="--animation-delay: 1.5s;">🪐</span>
       </div>
-
       <style>
         @keyframes bounce {
           0%, 100% {
@@ -22,10 +21,45 @@
             transform: translateY(-10px);
           }
         }
-
         .emoji-icon {
           animation: bounce 2s infinite ease-in-out;
           animation-delay: var(--animation-delay);
+        }
+        .emoji-icons-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 10rem;
+          height: 8rem;
+          z-index: 10;
+        }
+        .emoji-icons-inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 10rem;
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+        @media (max-width: 1023px) {
+          .emoji-icons-container {
+            left: auto;
+            right: 0.5rem;
+            top: 3.5rem;
+            width: 9.5rem;
+            height: 7rem;
+          }
+          .emoji-icons-inner {
+            left: 0;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: flex-end;
+            gap: 0.5rem;
+          }
         }
       </style>
     </div>
@@ -45,28 +79,124 @@
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row pt-6 items-start w-full max-w-[420px]">
+        <div class="store-badges-wrapper">
           <!-- Official Google Play Badge -->
-          <div class="flex-1 max-w-[200px] flex flex-col items-center justify-center">
-            <div class="w-[180px] h-[60px] flex items-center justify-center bg-white rounded-lg">
+          <div class="store-badge">
+            <div class="badge-img">
               <img 
                 src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
                 alt="Get it on Google Play" 
-                class="max-w-full max-h-full object-contain drop-shadow-lg"
+                class="badge-image badge-google"
               />
             </div>
           </div>
-          <!-- Official App Store Badge (Coming Soon) -->
-          <div class="flex-1 max-w-[200px] flex flex-col items-center justify-center">
-            <div class="w-[180px] h-[60px] flex items-center justify-center bg-white rounded-lg">
+          <!-- Official App Store Badge (Unhighlighted) -->
+          <div class="store-badge">
+            <div class="badge-img">
               <img 
                 src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1590969600&h=a4b914b28dab824baf057a0d2c8cbb5f" 
                 alt="Download on the App Store" 
-                class="max-w-full max-h-full object-contain drop-shadow-lg opacity-40"
+                class="badge-image badge-apple opacity-40"
               />
             </div>
-            <span class="mt-2 text-gray-500 text-sm font-semibold tracking-wide">Coming Soon</span>
           </div>
+          <style>
+            .store-badges-wrapper {
+              display: flex;
+              flex-direction: row;
+              gap: 2rem;
+              width: 100%;
+              max-width: 520px;
+              padding-top: 2rem;
+              align-items: center;
+              justify-content: flex-start;
+              margin-left: 0;
+              margin-right: 0;
+            }
+            .store-badge {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              max-width: 200px;
+              flex: 1 1 0;
+            }
+            .badge-img {
+              width: 180px;
+              height: 60px;
+              min-height: 60px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #fff;
+              border-radius: 0.75rem;
+              overflow: hidden;
+            }
+            .badge-image {
+              width: 100%;
+              height: 100%;
+              min-width: 0;
+              min-height: 0;
+              object-fit: contain;
+              box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+              display: block;
+            }
+            .badge-google,
+            .badge-apple {
+              width: 100%;
+              height: 100%;
+              min-width: 0;
+              min-height: 0;
+              object-fit: contain;
+              display: block;
+            }
+            .coming-soon {
+              margin-top: 0.4rem;
+              color: #6b7280;
+              font-size: 1rem;
+              font-weight: 600;
+              letter-spacing: 0.04em;
+            }
+            @media (max-width: 1023px) {
+              .store-badges-wrapper {
+                justify-content: center;
+                margin-left: auto;
+                margin-right: auto;
+              }
+            }
+            @media (max-width: 640px) {
+              .store-badges-wrapper {
+                gap: 0.5rem;
+                max-width: 100vw;
+                justify-content: center;
+                padding-top: 1.2rem;
+              }
+              .store-badge {
+                max-width: 140px;
+              }
+              .badge-img {
+                width: 120px;
+                height: 38px;
+                min-height: 38px;
+                border-radius: 0.5rem;
+                overflow: hidden;
+              }
+              .badge-image,
+              .badge-google,
+              .badge-apple {
+                width: 100%;
+                height: 100%;
+                min-width: 0;
+                min-height: 0;
+                object-fit: contain;
+                display: block;
+              }
+              .coming-soon {
+                font-size: 0.8rem;
+                margin-top: 0.1rem;
+              }
+            }
+          </style>
         </div>
       </div>
 

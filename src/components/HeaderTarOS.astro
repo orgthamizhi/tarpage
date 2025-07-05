@@ -2,9 +2,9 @@
 import MobileMenu from './MobileMenu.astro';
 ---
 
-<header class="fixed top-0 w-full bg-white z-50 border-b border-gray-200">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-12">
+<header class="fixed top-0 left-0 w-full bg-white z-50 border-b border-gray-200">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="flex justify-between items-center h-12 w-full">
       <!-- Logo -->
       <div class="flex items-center">
         <a href="/" class="flex items-center space-x-2 group">
@@ -129,8 +129,8 @@ import MobileMenu from './MobileMenu.astro';
       <!-- Removed Download App button -->
 
       <!-- Mobile menu button -->
-      <div class="lg:hidden">
-        <button id="open-mobile-menu" class="text-gray-600 hover:text-gray-900 p-2">
+      <div class="lg:hidden flex items-center">
+        <button id="open-mobile-menu" class="text-gray-600 hover:text-gray-900 p-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -147,10 +147,51 @@ import MobileMenu from './MobileMenu.astro';
           if (openBtn && mobileMenu) {
             openBtn.addEventListener('click', function() {
               mobileMenu.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+            });
+            // Optional: Hide menu on resize to desktop
+            window.addEventListener('resize', function() {
+              if (window.innerWidth >= 1024) {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+              }
             });
           }
         });
       </script>
+</header>
+<style>
+  header {
+    width: 100vw;
+    min-width: 0;
+    left: 0;
+    right: 0;
+  }
+  nav {
+    width: 100%;
+    min-width: 0;
+  }
+  @media (max-width: 1023px) {
+    header {
+      position: fixed;
+      width: 100vw;
+      left: 0;
+      right: 0;
+    }
+    nav {
+      width: 100vw;
+      min-width: 0;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .lg\:flex {
+      display: none !important;
+    }
+    .lg\:hidden {
+      display: flex !important;
+    }
+  }
+</style>
     </div>
   </nav>
 </header>
