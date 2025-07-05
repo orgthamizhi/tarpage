@@ -1,0 +1,62 @@
+---
+---
+
+<!-- Mobile Menu Component (can be integrated with Header) -->
+<div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-50 bg-white">
+  <div class="flex flex-col h-full">
+    <!-- Mobile Header -->
+    <div class="flex justify-between items-center p-4 border-b">
+      <a href="/" class="text-2xl font-bold text-primary-900">
+        ModernShop
+      </a>
+      <button id="close-menu" class="text-gray-700 hover:text-primary-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="flex-1 px-4 py-6 space-y-6">
+      <a href="#products" class="block text-lg text-gray-700 hover:text-primary-600 transition-colors">
+        Products
+      </a>
+      <a href="#features" class="block text-lg text-gray-700 hover:text-primary-600 transition-colors">
+        Features
+      </a>
+      <a href="#testimonials" class="block text-lg text-gray-700 hover:text-primary-600 transition-colors">
+        Reviews
+      </a>
+      <a href="#contact" class="block text-lg text-gray-700 hover:text-primary-600 transition-colors">
+        Contact
+      </a>
+    </nav>
+
+    <!-- Mobile CTA -->
+    <div class="p-4 space-y-3 border-t">
+      <button class="w-full text-gray-700 hover:text-primary-600 transition-colors py-3">
+        Sign In
+      </button>
+      <button class="w-full bg-primary-600 text-white py-3 rounded-lg hover:bg-primary-700 transition-colors">
+        Get Started
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeButton = document.getElementById('close-menu');
+    
+    // You can add event listeners for opening/closing the menu
+    // This would typically be triggered from the hamburger button in Header.astro
+    
+    if (closeButton && mobileMenu) {
+      closeButton.addEventListener('click', function() {
+        mobileMenu.classList.add('hidden');
+      });
+    }
+  });
+</script>

@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderTarOS from '../components/HeaderTarOS.astro';
+import FooterTarOS from '../components/FooterTarOS.astro';
+---
+
+<Layout title="Rides - Tar">
+  <HeaderTarOS />
+  <main class="pt-24 pb-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <!-- Hero Section -->
+      <div class="text-center mb-20">
+        <div class="text-8xl mb-6">&#128663;</div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Rides
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Get around easily. Safe, fast rides.
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <!-- Matching -->
+        <div class="bg-green-50 p-8 rounded-lg border border-gray-100">
+          <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Matching</h3>
+          <p class="text-gray-600 leading-relaxed">Smart driver-rider pairing</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="bg-blue-50 p-8 rounded-lg border border-gray-100">
+          <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Navigation</h3>
+          <p class="text-gray-600 leading-relaxed">Optimal route planning</p>
+        </div>
+
+        <!-- Payment -->
+        <div class="bg-purple-50 p-8 rounded-lg border border-gray-100">
+          <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Payment</h3>
+          <p class="text-gray-600 leading-relaxed">Cashless, secure payments</p>
+        </div>
+
+        <!-- Safety -->
+        <div class="bg-yellow-50 p-8 rounded-lg border border-gray-100">
+          <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Safety</h3>
+          <p class="text-gray-600 leading-relaxed">Verified drivers, tracking</p>
+        </div>
+
+        <!-- Ratings -->
+        <div class="bg-indigo-50 p-8 rounded-lg border border-gray-100">
+          <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
+            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Ratings</h3>
+          <p class="text-gray-600 leading-relaxed">Two-way rating system</p>
+        </div>
+
+        <!-- Support -->
+        <div class="bg-red-50 p-8 rounded-lg border border-gray-100">
+          <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-6 border border-gray-200">
+            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4 leading-tight">Support</h3>
+          <p class="text-gray-600 leading-relaxed">24/7 help available</p>
+        </div>
+      </div>
+
+      <!-- Simple Process -->
+      <div class="text-center mb-20">
+        <h2 class="text-2xl font-bold text-gray-900 mb-12">How it works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-3">&#128241;</div>
+            <h3 class="font-semibold text-gray-900 mb-1">Request</h3>
+            <p class="text-gray-600 text-sm">Book your ride</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">&#129309;</div>
+            <h3 class="font-semibold text-gray-900 mb-1">Match</h3>
+            <p class="text-gray-600 text-sm">Find nearby driver</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">&#128663;</div>
+            <h3 class="font-semibold text-gray-900 mb-1">Pickup</h3>
+            <p class="text-gray-600 text-sm">Driver arrives</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-3">&#127937;</div>
+            <h3 class="font-semibold text-gray-900 mb-1">Arrive</h3>
+            <p class="text-gray-600 text-sm">Reach destination</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ride Types -->
+      <div class="mb-20">
+        <h2 class="text-2xl font-bold text-gray-900 text-center mb-12">Choose your ride</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">&#128663;</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Economy</h3>
+            <p class="text-gray-600 text-sm">Affordable rides for everyday travel</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">&#128664;</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Premium</h3>
+            <p class="text-gray-600 text-sm">Comfortable rides with extra space</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">&#128665;</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Luxury</h3>
+            <p class="text-gray-600 text-sm">High-end vehicles for special occasions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ride Benefits -->
+      <div class="mb-20">
+        <h2 class="text-2xl font-bold text-gray-900 text-center mb-12">Why ride with us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="text-3xl mb-4">&#9889;</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Quick Pickup</h3>
+            <p class="text-gray-600 text-sm">Average pickup time under 5 minutes in busy areas.</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="text-3xl mb-4">&#128176;</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Upfront Pricing</h3>
+            <p class="text-gray-600 text-sm">Know your fare before you book, no surge pricing surprises.</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="text-3xl mb-4">&#11088;</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Top Drivers</h3>
+            <p class="text-gray-600 text-sm">All drivers are background-checked and highly rated.</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="text-3xl mb-4">&#128241;</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Share Your Trip</h3>
+            <p class="text-gray-600 text-sm">Share your ride details with friends and family for safety.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simple Illustration -->
+      <div class="text-center mb-20">
+        <div class="max-w-md mx-auto">
+          <svg viewBox="0 0 400 200" class="w-full h-auto text-green-600">
+            <!-- Ride route illustration -->
+            <path d="M50 150 Q200 50 350 150" stroke="currentColor" stroke-width="3" fill="none" opacity="0.3"/>
+            <circle cx="50" cy="150" r="15" fill="currentColor" opacity="0.4"/>
+            <circle cx="350" cy="150" r="15" fill="currentColor" opacity="0.4"/>
+            <circle cx="200" cy="100" r="12" fill="currentColor" opacity="0.6"/>
+            <text x="50" y="155" text-anchor="middle" class="text-xs fill-white">A</text>
+            <text x="350" y="155" text-anchor="middle" class="text-xs fill-white">B</text>
+            <text x="200" y="105" text-anchor="middle" class="text-xs fill-white">&#128663;</text>
+          </svg>
+        </div>
+        <p class="text-gray-500 text-sm mt-4">Point A to point B, safely</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center bg-gray-50 rounded-2xl p-12">
+        <div class="text-6xl mb-4">&#128663;</div>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Start riding</h2>
+        <p class="text-gray-600 mb-8">Launch your ride service today</p>
+        <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-medium transition-colors">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </main>
+  <FooterTarOS />
+</Layout>

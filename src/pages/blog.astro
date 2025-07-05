@@ -1,0 +1,231 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderTarOS from '../components/HeaderTarOS.astro';
+import FooterTarOS from '../components/FooterTarOS.astro';
+
+const featuredPost = {
+  title: "The Future of Point of Sale: AI-Powered Commerce",
+  excerpt: "Discover how artificial intelligence is transforming the retail landscape and what it means for your business.",
+  author: "Sarah Chen",
+  date: "March 15, 2024",
+  readTime: "8 min read",
+  category: "Technology",
+  image: "/api/placeholder/800/400"
+};
+
+const posts = [
+  {
+    title: "10 Ways to Increase Customer Loyalty",
+    excerpt: "Build lasting relationships with your customers using these proven strategies.",
+    author: "Mike Johnson",
+    date: "March 12, 2024",
+    readTime: "5 min read",
+    category: "Marketing",
+    color: "semantic-blue"
+  },
+  {
+    title: "Understanding Payment Processing Fees",
+    excerpt: "A comprehensive guide to payment processing costs and how to minimize them.",
+    author: "Lisa Rodriguez",
+    date: "March 10, 2024",
+    readTime: "6 min read",
+    category: "Finance",
+    color: "semantic-green"
+  },
+  {
+    title: "Inventory Management Best Practices",
+    excerpt: "Keep your stock levels optimized with these expert tips and strategies.",
+    author: "David Kim",
+    date: "March 8, 2024",
+    readTime: "7 min read",
+    category: "Operations",
+    color: "semantic-purple"
+  },
+  {
+    title: "Building a Strong Online Presence",
+    excerpt: "Essential steps to establish your business online and reach more customers.",
+    author: "Emma Wilson",
+    date: "March 5, 2024",
+    readTime: "4 min read",
+    category: "Digital Marketing",
+    color: "semantic-orange"
+  },
+  {
+    title: "The Rise of Contactless Payments",
+    excerpt: "How contactless technology is changing the way customers pay.",
+    author: "Alex Thompson",
+    date: "March 3, 2024",
+    readTime: "5 min read",
+    category: "Technology",
+    color: "semantic-teal"
+  },
+  {
+    title: "Small Business Success Stories",
+    excerpt: "Learn from entrepreneurs who transformed their businesses with the right tools.",
+    author: "Rachel Green",
+    date: "March 1, 2024",
+    readTime: "6 min read",
+    category: "Success Stories",
+    color: "semantic-pink"
+  }
+];
+
+const categories = ["All", "Technology", "Marketing", "Finance", "Operations", "Digital Marketing", "Success Stories"];
+---
+
+<Layout title="Blog - Tar">
+  <HeaderTarOS />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+            <div class="w-2 h-2 bg-semantic-purple rounded-full"></div>
+            <span class="text-sm font-medium text-notion-700">Latest insights & updates</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-notion-900 leading-[1.1] tracking-tight mb-8">
+            Stories, tips, and insights for 
+            <span class="text-semantic-blue">business growth</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-notion-600 leading-relaxed max-w-3xl mx-auto">
+            Stay up to date with the latest trends, best practices, and success stories from the world of commerce.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="py-16 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-notion-lg border border-notion-200 overflow-hidden">
+          <div class="grid lg:grid-cols-2 gap-0">
+            <div class="bg-gradient-to-br from-semantic-blue to-semantic-purple h-64 lg:h-auto"></div>
+            <div class="p-12">
+              <div class="inline-flex items-center space-x-2 bg-semantic-blue/10 text-semantic-blue px-3 py-1 rounded-lg text-sm font-medium mb-6">
+                Featured
+              </div>
+              
+              <h2 class="text-3xl font-bold text-notion-900 mb-4 leading-tight">
+                {featuredPost.title}
+              </h2>
+              
+              <p class="text-notion-600 text-lg leading-relaxed mb-8">
+                {featuredPost.excerpt}
+              </p>
+              
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="w-10 h-10 bg-semantic-blue rounded-full flex items-center justify-center">
+                    <span class="text-white font-semibold text-sm">{featuredPost.author.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <div class="font-medium text-notion-900">{featuredPost.author}</div>
+                    <div class="text-sm text-notion-500">{featuredPost.date} • {featuredPost.readTime}</div>
+                  </div>
+                </div>
+                
+                <a href="#" class="inline-flex items-center text-semantic-blue font-semibold hover:gap-2 transition-all duration-300 group">
+                  Read more
+                  <svg class="w-4 h-4 ml-1 group-hover:ml-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="py-8 bg-surface-secondary border-b border-notion-200">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-wrap gap-3">
+          {categories.map((category) => (
+            <button class="px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:bg-surface-hover text-notion-600 hover:text-notion-900">
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post, index) => (
+            <article class="bg-white rounded-2xl shadow-notion border border-notion-200 overflow-hidden hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`h-48 bg-gradient-to-br from-${post.color} to-${post.color}/80`}></div>
+              
+              <div class="p-8">
+                <div class={`inline-flex items-center space-x-2 bg-${post.color}/10 text-${post.color} px-3 py-1 rounded-lg text-sm font-medium mb-4`}>
+                  {post.category}
+                </div>
+                
+                <h3 class="text-xl font-bold text-notion-900 mb-3 leading-tight">
+                  {post.title}
+                </h3>
+                
+                <p class="text-notion-600 leading-relaxed mb-6">
+                  {post.excerpt}
+                </p>
+                
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class={`w-8 h-8 bg-${post.color} rounded-full flex items-center justify-center`}>
+                      <span class="text-white font-semibold text-xs">{post.author.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <div class="font-medium text-notion-900 text-sm">{post.author}</div>
+                      <div class="text-xs text-notion-500">{post.date} • {post.readTime}</div>
+                    </div>
+                  </div>
+                  
+                  <a href="#" class="text-notion-600 hover:text-notion-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        
+        <!-- Load More -->
+        <div class="text-center mt-16">
+          <button class="bg-notion-900 hover:bg-notion-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 shadow-notion hover:shadow-notion-md">
+            Load More Articles
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+          <h2 class="text-4xl font-bold mb-6">Stay in the loop</h2>
+          <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
+            Get the latest insights, tips, and updates delivered straight to your inbox.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              class="flex-1 px-4 py-3 rounded-xl text-notion-900 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button class="bg-white text-notion-900 px-6 py-3 rounded-xl font-semibold hover:bg-notion-100 transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterTarOS />
+</Layout>

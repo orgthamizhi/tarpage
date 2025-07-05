@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderTarOS from '../components/HeaderTarOS.astro';
+import FooterTarOS from '../components/FooterTarOS.astro';
+---
+
+<Layout title="Privacy Policy - Tar">
+  <HeaderTarOS />
+  <main class="pt-24 pb-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <!-- Hero Section -->
+      <div class="text-center mb-20">
+        <div class="text-8xl mb-6">&#128274;</div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Privacy Policy
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          How we protect and handle your data.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none">
+        <div class="bg-gray-50 rounded-2xl p-8 mb-8">
+          <p class="text-sm text-gray-600 mb-4">Last updated: January 1, 2024</p>
+          <p class="text-gray-700">
+            At Tar, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your information when you use our services.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Information We Collect</h2>
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <ul class="space-y-3 text-gray-700">
+                <li>• Account information (name, email, phone)</li>
+                <li>• Usage data and analytics</li>
+                <li>• Device and browser information</li>
+                <li>• Location data (when permitted)</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">How We Use Your Information</h2>
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <ul class="space-y-3 text-gray-700">
+                <li>• Provide and improve our services</li>
+                <li>• Process transactions and orders</li>
+                <li>• Send important updates and notifications</li>
+                <li>• Ensure security and prevent fraud</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Data Protection</h2>
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <p class="text-gray-700">
+                We implement industry-standard security measures to protect your data, including encryption, secure servers, and regular security audits.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Your Rights</h2>
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <ul class="space-y-3 text-gray-700">
+                <li>• Access your personal data</li>
+                <li>• Correct inaccurate information</li>
+                <li>• Delete your account and data</li>
+                <li>• Export your data</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-gray-600">
+            Questions about our privacy policy? <a href="/contact" class="text-blue-600 hover:text-blue-700">Contact us</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <FooterTarOS />
+</Layout>

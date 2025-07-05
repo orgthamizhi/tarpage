@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderTarOS from '../components/HeaderTarOS.astro';
+import FooterTarOS from '../components/FooterTarOS.astro';
+
+const communityFeatures = [
+  {
+    title: "Discussion Forums",
+    description: "Connect with other Tar OS users, share tips, and get help from the community.",
+    icon: "💬",
+    color: "semantic-green"
+  },
+  {
+    title: "Expert Q&A",
+    description: "Get answers from Tar OS experts and experienced business owners.",
+    icon: "🎯",
+    color: "semantic-blue"
+  },
+  {
+    title: "Success Stories",
+    description: "Learn from real businesses and their journey with Tar OS.",
+    icon: "🏆",
+    color: "semantic-orange"
+  },
+  {
+    title: "Feature Requests",
+    description: "Suggest new features and vote on what matters most to your business.",
+    icon: "💡",
+    color: "semantic-purple"
+  },
+  {
+    title: "Local Meetups",
+    description: "Join local Tar OS user groups and networking events in your area.",
+    icon: "📍",
+    color: "semantic-teal"
+  },
+  {
+    title: "Beta Testing",
+    description: "Get early access to new features and help shape the future of Tar OS.",
+    icon: "🚀",
+    color: "semantic-pink"
+  }
+];
+
+const communityStats = [
+  { number: "50K+", label: "Active Members" },
+  { number: "1M+", label: "Posts & Discussions" },
+  { number: "500+", label: "Local Meetups" },
+  { number: "95%", label: "Questions Answered" }
+];
+
+const recentTopics = [
+  {
+    title: "Best practices for inventory management in retail",
+    author: "Sarah Chen",
+    replies: 23,
+    category: "Retail",
+    time: "2 hours ago"
+  },
+  {
+    title: "How to set up loyalty programs for restaurants",
+    author: "Mike Rodriguez",
+    replies: 15,
+    category: "Restaurants",
+    time: "4 hours ago"
+  },
+  {
+    title: "Integration tips for QuickBooks and Tar OS",
+    author: "Jennifer Kim",
+    replies: 31,
+    category: "Integrations",
+    time: "6 hours ago"
+  },
+  {
+    title: "Mobile POS setup for food trucks",
+    author: "David Thompson",
+    replies: 18,
+    category: "Mobile",
+    time: "8 hours ago"
+  }
+];
+---
+
+<Layout title="Community - Tar">
+  <HeaderTarOS />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+            <div class="w-2 h-2 bg-semantic-green rounded-full"></div>
+            <span class="text-sm font-medium text-notion-700">Join the Community</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-notion-900 leading-[1.1] tracking-tight mb-8">
+            Connect with the 
+            <span class="text-semantic-green">Tar OS community</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-notion-600 leading-relaxed max-w-3xl mx-auto">
+            Join thousands of business owners, share experiences, get expert advice, and grow your business together with the Tar OS community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="py-16 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {communityStats.map((stat) => (
+            <div>
+              <div class="text-3xl md:text-4xl font-bold text-semantic-green mb-2">{stat.number}</div>
+              <div class="text-notion-600 font-medium">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Features -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">What you'll find in our community</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            A vibrant ecosystem of business owners, experts, and Tar OS team members ready to help you succeed.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {communityFeatures.map((feature, index) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-notion-sm`}>
+                <span class="text-2xl">{feature.icon}</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold text-notion-900 mb-4 leading-tight">
+                {feature.title}
+              </h3>
+              
+              <p class="text-notion-600 leading-relaxed text-lg">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Discussions -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Recent discussions</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            See what the community is talking about and join the conversation.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-notion border border-notion-200 overflow-hidden">
+          {recentTopics.map((topic, index) => (
+            <div class={`p-6 ${index !== recentTopics.length - 1 ? 'border-b border-notion-200' : ''} hover:bg-surface-hover transition-colors cursor-pointer`}>
+              <div class="flex items-start justify-between">
+                <div class="flex-1">
+                  <h3 class="text-lg font-semibold text-notion-900 mb-2 hover:text-semantic-green transition-colors">
+                    {topic.title}
+                  </h3>
+                  <div class="flex items-center space-x-4 text-sm text-notion-600">
+                    <span>by {topic.author}</span>
+                    <span>•</span>
+                    <span>{topic.replies} replies</span>
+                    <span>•</span>
+                    <span>{topic.time}</span>
+                  </div>
+                </div>
+                <span class="bg-surface-secondary text-notion-700 px-3 py-1 rounded-lg text-sm font-medium">
+                  {topic.category}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center mt-8">
+          <button class="bg-semantic-green text-white px-8 py-3 rounded-xl font-semibold hover:bg-green-700 transition-colors">
+            View All Discussions
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Guidelines -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Community guidelines</h2>
+          <p class="text-xl text-notion-600">
+            Help us maintain a welcoming and productive environment for everyone.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+            <h3 class="text-xl font-bold text-notion-900 mb-4">Be respectful</h3>
+            <p class="text-notion-600">
+              Treat all community members with respect and kindness. We're all here to learn and grow together.
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+            <h3 class="text-xl font-bold text-notion-900 mb-4">Stay on topic</h3>
+            <p class="text-notion-600">
+              Keep discussions relevant to Tar OS and business topics. This helps everyone find the information they need.
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+            <h3 class="text-xl font-bold text-notion-900 mb-4">Share knowledge</h3>
+            <p class="text-notion-600">
+              Share your experiences and insights. Your knowledge can help other business owners succeed.
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200">
+            <h3 class="text-xl font-bold text-notion-900 mb-4">No spam</h3>
+            <p class="text-notion-600">
+              Avoid promotional content and spam. Focus on providing value to the community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+          <h2 class="text-4xl font-bold mb-6">Ready to join the community?</h2>
+          <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
+            Connect with thousands of business owners, get expert advice, and grow your business with the Tar OS community.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg shadow-notion">
+              Join Community
+            </button>
+            <button class="border border-notion-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-notion-800 transition-colors text-lg">
+              Browse Discussions
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterTarOS />
+</Layout>

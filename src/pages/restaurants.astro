@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FooterSquare from '../components/FooterSquare.astro';
+
+const restaurantFeatures = [
+  {
+    title: "Point of Sale",
+    description: "Fast, reliable POS system designed specifically for restaurant operations.",
+    icon: "💳",
+    color: "semantic-orange",
+    features: ["Quick order entry", "Table management", "Kitchen display", "Split payments"]
+  },
+  {
+    title: "Menu Management",
+    description: "Easily update menus, prices, and availability across all channels.",
+    icon: "📋",
+    color: "semantic-green",
+    features: ["Digital menus", "Price updates", "Seasonal items", "Nutritional info"]
+  },
+  {
+    title: "Kitchen Display",
+    description: "Streamline kitchen operations with digital order management.",
+    icon: "👨‍🍳",
+    color: "semantic-blue",
+    features: ["Order tracking", "Prep times", "Kitchen workflow", "Staff coordination"]
+  },
+  {
+    title: "Table Management",
+    description: "Optimize seating and improve customer experience with smart table management.",
+    icon: "🪑",
+    color: "semantic-purple",
+    features: ["Reservation system", "Wait list", "Table status", "Customer preferences"]
+  },
+  {
+    title: "Inventory Control",
+    description: "Track ingredients, reduce waste, and automate ordering.",
+    icon: "📦",
+    color: "semantic-teal",
+    features: ["Ingredient tracking", "Waste reduction", "Auto-ordering", "Cost analysis"]
+  },
+  {
+    title: "Staff Management",
+    description: "Schedule staff, track hours, and manage payroll efficiently.",
+    icon: "👥",
+    color: "semantic-pink",
+    features: ["Shift scheduling", "Time tracking", "Payroll integration", "Performance metrics"]
+  }
+];
+
+const restaurantTypes = [
+  {
+    name: "Quick Service",
+    description: "Fast-casual and quick service restaurants",
+    features: ["Fast checkout", "Mobile ordering", "Drive-thru support", "Loyalty programs"]
+  },
+  {
+    name: "Full Service",
+    description: "Fine dining and full-service restaurants",
+    features: ["Table service", "Wine management", "Reservation system", "Course timing"]
+  },
+  {
+    name: "Cafes & Bakeries",
+    description: "Coffee shops, cafes, and bakery operations",
+    features: ["Pastry tracking", "Coffee customization", "Grab-and-go", "Subscription orders"]
+  },
+  {
+    name: "Food Trucks",
+    description: "Mobile food service operations",
+    features: ["Mobile POS", "Location tracking", "Event management", "Compact setup"]
+  }
+];
+---
+
+<Layout title="Restaurant Solutions - Tar OS">
+  <Header />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+            <div class="w-2 h-2 bg-semantic-orange rounded-full"></div>
+            <span class="text-sm font-medium text-notion-700">Restaurant Solutions</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-notion-900 leading-[1.1] tracking-tight mb-8">
+            Built for 
+            <span class="text-semantic-orange">restaurants</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-notion-600 leading-relaxed max-w-3xl mx-auto">
+            From quick service to fine dining, Tar OS provides the tools restaurants need to serve customers, manage operations, and grow their business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant Features -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Everything your restaurant needs</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            Comprehensive restaurant management tools designed to streamline operations and enhance customer experience.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {restaurantFeatures.map((feature, index) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-notion-sm`}>
+                <span class="text-2xl">{feature.icon}</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold text-notion-900 mb-4 leading-tight">
+                {feature.title}
+              </h3>
+              
+              <p class="text-notion-600 mb-8 leading-relaxed text-lg">
+                {feature.description}
+              </p>
+              
+              <div class="space-y-3">
+                {feature.features.map((item) => (
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-notion-900 rounded-full mr-3 flex-shrink-0"></div>
+                    <span class="text-notion-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant Types -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Solutions for every restaurant type</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            Whether you're running a food truck or a fine dining establishment, we have the right solution for your business.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {restaurantTypes.map((type) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300">
+              <h3 class="text-2xl font-bold text-notion-900 mb-4">{type.name}</h3>
+              <p class="text-notion-600 mb-6 text-lg">{type.description}</p>
+              
+              <div class="grid grid-cols-2 gap-3">
+                {type.features.map((feature) => (
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-semantic-orange rounded-full mr-3 flex-shrink-0"></div>
+                    <span class="text-notion-700 text-sm font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-semantic-orange mb-2">50K+</div>
+            <div class="text-notion-600">Restaurants served</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-semantic-orange mb-2">$5B+</div>
+            <div class="text-notion-600">Transactions processed</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-semantic-orange mb-2">99.9%</div>
+            <div class="text-notion-600">Uptime guaranteed</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-semantic-orange mb-2">24/7</div>
+            <div class="text-notion-600">Customer support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+          <h2 class="text-4xl font-bold mb-6">Ready to transform your restaurant?</h2>
+          <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
+            Join thousands of restaurants using Tar OS to streamline operations and delight customers.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg shadow-notion">
+              Start Free Trial
+            </button>
+            <button class="border border-notion-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-notion-800 transition-colors text-lg">
+              Schedule Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterSquare />
+</Layout>

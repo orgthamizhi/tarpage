@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FooterSquare from '../components/FooterSquare.astro';
+
+const features = [
+  {
+    title: "Point of Sale",
+    description: "Accept payments anywhere with our secure, easy-to-use point-of-sale solutions.",
+    icon: "💳",
+    color: "semantic-blue",
+    features: ["Accept all payment types", "Inventory management", "Sales reporting", "Customer directory"]
+  },
+  {
+    title: "Online Store",
+    description: "Sell online with a free eCommerce website that syncs with your point of sale.",
+    icon: "🛒",
+    color: "semantic-purple",
+    features: ["Free online store", "Mobile optimized", "SEO tools", "Social media integration"]
+  },
+  {
+    title: "Invoices",
+    description: "Create and send professional invoices, and get paid faster.",
+    icon: "📄",
+    color: "semantic-green",
+    features: ["Professional templates", "Automatic reminders", "Online payments", "Expense tracking"]
+  },
+  {
+    title: "Marketing",
+    description: "Grow your business with email campaigns, loyalty programs, and more.",
+    icon: "📈",
+    color: "semantic-orange",
+    features: ["Email marketing", "Customer loyalty", "Social media tools", "Review management"]
+  },
+  {
+    title: "Team Management",
+    description: "Manage staff, track time, and streamline payroll all in one place.",
+    icon: "👥",
+    color: "semantic-teal",
+    features: ["Staff management", "Time tracking", "Payroll integration", "Performance insights"]
+  },
+  {
+    title: "Banking",
+    description: "Business banking designed for your Square account with no monthly fees.",
+    icon: "🏦",
+    color: "semantic-pink",
+    features: ["No monthly fees", "Instant deposits", "Business debit card", "Expense categorization"]
+  }
+];
+---
+
+<Layout title="Features - Tar OS">
+  <Header />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+            <div class="w-2 h-2 bg-semantic-blue rounded-full"></div>
+            <span class="text-sm font-medium text-notion-700">Complete POS Solution</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-notion-900 leading-[1.1] tracking-tight mb-8">
+            Everything you need to 
+            <span class="text-semantic-blue">run your business</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-notion-600 leading-relaxed max-w-3xl mx-auto">
+            From payments to inventory, marketing to analytics - Tar OS provides all the tools you need in one integrated platform.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-notion-sm`}>
+                <span class="text-2xl">{feature.icon}</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold text-notion-900 mb-4 leading-tight">
+                {feature.title}
+              </h3>
+              
+              <p class="text-notion-600 mb-8 leading-relaxed text-lg">
+                {feature.description}
+              </p>
+              
+              <div class="space-y-3 mb-8">
+                {feature.features.map((item) => (
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-notion-900 rounded-full mr-3 flex-shrink-0"></div>
+                    <span class="text-notion-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <a href="#" class="inline-flex items-center text-notion-900 font-semibold hover:gap-2 transition-all duration-300 group">
+                Learn more
+                <svg class="w-4 h-4 ml-1 group-hover:ml-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+          <h2 class="text-4xl font-bold mb-6">Ready to get started?</h2>
+          <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
+            Join millions of businesses worldwide and start selling with Tar OS today.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg shadow-notion">
+              Start Free Trial
+            </button>
+            <button class="border border-notion-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-notion-800 transition-colors text-lg">
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterSquare />
+</Layout>

@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FooterSquare from '../components/FooterSquare.astro';
+
+const integrations = [
+  {
+    name: "Shopify",
+    description: "Sync your Shopify store with Tar OS for unified inventory and order management.",
+    icon: "🛍️",
+    category: "E-commerce",
+    color: "semantic-green",
+    features: ["Product sync", "Order management", "Inventory tracking", "Customer data"]
+  },
+  {
+    name: "QuickBooks",
+    description: "Seamlessly integrate with QuickBooks for automated accounting and financial reporting.",
+    icon: "📊",
+    category: "Accounting",
+    color: "semantic-blue",
+    features: ["Automated bookkeeping", "Tax reporting", "Financial insights", "Invoice sync"]
+  },
+  {
+    name: "Mailchimp",
+    description: "Connect your email marketing campaigns with customer data from your POS system.",
+    icon: "📧",
+    category: "Marketing",
+    color: "semantic-orange",
+    features: ["Email automation", "Customer segmentation", "Campaign tracking", "Analytics"]
+  },
+  {
+    name: "Slack",
+    description: "Get real-time notifications and updates from your business directly in Slack.",
+    icon: "💬",
+    category: "Communication",
+    color: "semantic-purple",
+    features: ["Real-time alerts", "Sales notifications", "Team collaboration", "Custom workflows"]
+  },
+  {
+    name: "Google Analytics",
+    description: "Track customer behavior and sales performance with advanced analytics integration.",
+    icon: "📈",
+    category: "Analytics",
+    color: "semantic-teal",
+    features: ["Customer insights", "Sales tracking", "Conversion analysis", "Custom reports"]
+  },
+  {
+    name: "Stripe",
+    description: "Process payments securely with Stripe's advanced payment infrastructure.",
+    icon: "💳",
+    category: "Payments",
+    color: "semantic-pink",
+    features: ["Secure payments", "Multiple currencies", "Subscription billing", "Fraud protection"]
+  },
+  {
+    name: "Zapier",
+    description: "Connect Tar OS with 5000+ apps through Zapier's automation platform.",
+    icon: "⚡",
+    category: "Automation",
+    color: "semantic-blue",
+    features: ["Workflow automation", "5000+ app connections", "Custom triggers", "No-code setup"]
+  },
+  {
+    name: "WooCommerce",
+    description: "Integrate with WooCommerce to manage your WordPress e-commerce store.",
+    icon: "🌐",
+    category: "E-commerce",
+    color: "semantic-green",
+    features: ["Product management", "Order sync", "Customer data", "Inventory control"]
+  }
+];
+
+const categories = ["All", "E-commerce", "Accounting", "Marketing", "Communication", "Analytics", "Payments", "Automation"];
+---
+
+<Layout title="Integrations - Tar OS">
+  <Header />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+            <div class="w-2 h-2 bg-semantic-purple rounded-full"></div>
+            <span class="text-sm font-medium text-notion-700">200+ Integrations</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-notion-900 leading-[1.1] tracking-tight mb-8">
+            Connect with your 
+            <span class="text-semantic-purple">favorite tools</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-notion-600 leading-relaxed max-w-3xl mx-auto">
+            Integrate Tar OS with the tools you already use. Streamline workflows and sync data across your entire business ecosystem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Categories -->
+    <section class="py-12 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-4">
+          {categories.map((category) => (
+            <button class="px-6 py-3 rounded-xl border border-notion-200 bg-white hover:bg-surface-hover transition-all duration-200 font-medium text-notion-700 hover:text-notion-900">
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations Grid -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {integrations.map((integration, index) => (
+            <div class="bg-white rounded-2xl p-6 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300 animate-fade-in group" style={`animation-delay: ${index * 0.1}s`}>
+              <div class="flex items-start justify-between mb-4">
+                <div class={`w-12 h-12 bg-${integration.color} rounded-xl flex items-center justify-center shadow-notion-sm`}>
+                  <span class="text-xl">{integration.icon}</span>
+                </div>
+                <span class="text-xs font-medium text-notion-600 bg-surface-secondary px-2 py-1 rounded-lg">
+                  {integration.category}
+                </span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-notion-900 mb-2 group-hover:text-semantic-purple transition-colors">
+                {integration.name}
+              </h3>
+              
+              <p class="text-notion-600 mb-4 text-sm leading-relaxed">
+                {integration.description}
+              </p>
+              
+              <div class="space-y-2 mb-6">
+                {integration.features.map((feature) => (
+                  <div class="flex items-center">
+                    <div class="w-1.5 h-1.5 bg-notion-900 rounded-full mr-2 flex-shrink-0"></div>
+                    <span class="text-notion-700 text-sm">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <button class="w-full bg-notion-900 text-white py-2 rounded-lg font-medium hover:bg-notion-800 transition-colors text-sm">
+                Connect
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Integration CTA -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+          <h2 class="text-4xl font-bold mb-6">Need a custom integration?</h2>
+          <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
+            Don't see your tool listed? Our API makes it easy to build custom integrations or request new ones from our team.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg shadow-notion">
+              View API Docs
+            </button>
+            <button class="border border-notion-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-notion-800 transition-colors text-lg">
+              Request Integration
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterSquare />
+</Layout>

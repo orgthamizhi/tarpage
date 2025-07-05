@@ -1,0 +1,112 @@
+---
+const products = [
+  {
+    title: "Point of Sale",
+    description: "Accept payments anywhere with our secure, easy-to-use point-of-sale solutions.",
+    icon: "💳",
+    features: ["Accept all payment types", "Inventory management", "Sales reporting", "Customer directory"],
+    cta: "Learn more"
+  },
+  {
+    title: "Online Store",
+    description: "Sell online with a free eCommerce website that syncs with your point of sale.",
+    icon: "🛒",
+    features: ["Free online store", "Mobile optimized", "SEO tools", "Social media integration"],
+    cta: "Learn more"
+  },
+  {
+    title: "Invoices",
+    description: "Create and send professional invoices, and get paid faster.",
+    icon: "📄",
+    features: ["Professional templates", "Automatic reminders", "Online payments", "Expense tracking"],
+    cta: "Learn more"
+  },
+  {
+    title: "Marketing",
+    description: "Grow your business with email campaigns, loyalty programs, and more.",
+    icon: "📈",
+    features: ["Email marketing", "Customer loyalty", "Social media tools", "Review management"],
+    cta: "Learn more"
+  },
+  {
+    title: "Team Management",
+    description: "Manage staff, track time, and streamline payroll all in one place.",
+    icon: "👥",
+    features: ["Staff management", "Time tracking", "Payroll integration", "Performance insights"],
+    cta: "Learn more"
+  },
+  {
+    title: "Banking",
+    description: "Business banking designed for your Square account with no monthly fees.",
+    icon: "🏦",
+    features: ["No monthly fees", "Instant deposits", "Business debit card", "Expense categorization"],
+    cta: "Learn more"
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+        Everything you need to start selling
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Tar OS gives you all the tools you need to start, run, and grow your business, 
+        whether you're selling in person, online, or both.
+      </p>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {products.map((product) => (
+        <div class="group bg-gray-50 hover:bg-gray-100 transition-all duration-300 p-8 rounded-2xl border-0">
+          <!-- Icon -->
+          <div class="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
+            <span class="text-2xl">{product.icon}</span>
+          </div>
+          
+          <!-- Content -->
+          <h3 class="text-2xl font-bold text-black mb-4 leading-tight">
+            {product.title}
+          </h3>
+          <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+            {product.description}
+          </p>
+          
+          <!-- Features -->
+          <div class="space-y-3 mb-8">
+            {product.features.map((feature) => (
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></div>
+                <span class="text-gray-700 font-medium">{feature}</span>
+              </div>
+            ))}
+          </div>
+          
+          <!-- CTA -->
+          <a href="#" class="inline-flex items-center text-black font-semibold hover:gap-2 transition-all duration-300 group">
+            {product.cta}
+            <svg class="w-4 h-4 ml-1 group-hover:ml-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="mt-20 text-center">
+      <div class="bg-black rounded-2xl p-12 text-white">
+        <h3 class="text-3xl font-bold mb-4">Ready to get started?</h3>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Join millions of businesses worldwide and start selling with Tar OS today.
+        </p>
+        <button class="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-lg">
+          See all products
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

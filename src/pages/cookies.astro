@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderTarOS from '../components/HeaderTarOS.astro';
+import FooterTarOS from '../components/FooterTarOS.astro';
+---
+
+<Layout title="Cookie Policy - Tar">
+  <HeaderTarOS />
+  <main class="pt-24 pb-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <!-- Hero Section -->
+      <div class="text-center mb-20">
+        <div class="text-8xl mb-6">&#127850;</div>
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Cookie Policy
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          How we use cookies and tracking technologies.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none">
+        <div class="bg-gray-50 rounded-2xl p-8 mb-8">
+          <p class="text-sm text-gray-600 mb-4">Last updated: January 1, 2024</p>
+          <p class="text-gray-700">
+            This Cookie Policy explains how Tar uses cookies and similar technologies to recognize you when you visit our website.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">What Are Cookies</h2>
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <p class="text-gray-700">
+                Cookies are small data files that are placed on your computer or mobile device when you visit a website. They help us provide you with a better experience.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Types of Cookies We Use</h2>
+            <div class="space-y-4">
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-semibold text-gray-900 mb-2">Essential Cookies</h3>
+                <p class="text-gray-700 text-sm">Required for the website to function properly. Cannot be disabled.</p>
+              </div>
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-semibold text-gray-900 mb-2">Analytics Cookies</h3>
+                <p class="text-gray-700 text-sm">Help us understand how visitors interact with our website.</p>
+              </div>
+              <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 class="font-semibold text-gray-900 mb-2">Functional Cookies</h3>
+                <p class="text-gray-700 text-sm">Remember your preferences and settings.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Managing Cookies</h2>
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <ul class="space-y-3 text-gray-700">
+                <li>• You can control cookies through your browser settings</li>
+                <li>• Disabling cookies may affect website functionality</li>
+                <li>• You can delete existing cookies from your device</li>
+                <li>• Most browsers allow you to block third-party cookies</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Third-Party Cookies</h2>
+            <div class="bg-white border border-gray-200 rounded-xl p-6">
+              <p class="text-gray-700">
+                We may use third-party services like Google Analytics that place their own cookies. These are governed by their respective privacy policies.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div class="mt-12 text-center">
+          <p class="text-gray-600">
+            Questions about cookies? <a href="/contact" class="text-blue-600 hover:text-blue-700">Contact us</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <FooterTarOS />
+</Layout>

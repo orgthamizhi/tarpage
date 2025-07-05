@@ -1,0 +1,2 @@
+.\acli rovodev run --restore
+

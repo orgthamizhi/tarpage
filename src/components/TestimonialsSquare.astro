@@ -1,0 +1,88 @@
+---
+const testimonials = [
+  {
+    quote: "Square has been a game-changer for our business. The ease of use and reliability has allowed us to focus on what we do best - serving our customers.",
+    author: "Maria Rodriguez",
+    title: "Owner, Café Luna",
+    location: "San Francisco, CA",
+    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+  },
+  {
+    quote: "The inventory management and analytics have transformed how we operate. We can see exactly what's selling and make better business decisions.",
+    author: "James Chen",
+    title: "Manager, Urban Threads",
+    location: "New York, NY", 
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+  },
+  {
+    quote: "Square's online store integration made it seamless to sell both in-person and online. Our revenue has grown 40% since switching.",
+    author: "Sarah Johnson",
+    title: "Founder, Artisan Crafts",
+    location: "Austin, TX",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+  }
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">
+        Loved by business owners everywhere
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        See how Tar OS helps businesses like yours grow and succeed.
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div class="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
+          <!-- Quote -->
+          <div class="mb-6">
+            <svg class="w-8 h-8 text-gray-300 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+            </svg>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              "{testimonial.quote}"
+            </p>
+          </div>
+
+          <!-- Author -->
+          <div class="flex items-center">
+            <img 
+              src={testimonial.avatar} 
+              alt={testimonial.author}
+              class="w-12 h-12 rounded-full object-cover mr-4"
+            />
+            <div>
+              <h4 class="font-semibold text-black">{testimonial.author}</h4>
+              <p class="text-gray-600 text-sm">{testimonial.title}</p>
+              <p class="text-gray-500 text-sm">{testimonial.location}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Stats -->
+    <div class="mt-16 text-center">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div>
+          <div class="text-3xl font-bold text-black mb-2">4.7/5</div>
+          <div class="text-gray-600">App Store Rating</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-black mb-2">4M+</div>
+          <div class="text-gray-600">Happy Sellers</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-black mb-2">24/7</div>
+          <div class="text-gray-600">Customer Support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FooterSquare from '../components/FooterSquare.astro';
+
+const retailFeatures = [
+  {
+    title: "Inventory Management",
+    description: "Track stock levels, manage variants, and automate reordering across all locations.",
+    icon: "📦",
+    color: "semantic-pink",
+    features: ["Real-time tracking", "Multi-location sync", "Low stock alerts", "Automated reordering"]
+  },
+  {
+    title: "Customer Management",
+    description: "Build customer profiles, track purchase history, and create loyalty programs.",
+    icon: "👥",
+    color: "semantic-blue",
+    features: ["Customer profiles", "Purchase history", "Loyalty programs", "Personalized offers"]
+  },
+  {
+    title: "Multi-Channel Sales",
+    description: "Sell in-store, online, and on social media with unified inventory management.",
+    icon: "🛒",
+    color: "semantic-green",
+    features: ["Online store", "Social commerce", "Marketplace sync", "Unified inventory"]
+  },
+  {
+    title: "Analytics & Reports",
+    description: "Get insights into sales performance, customer behavior, and inventory trends.",
+    icon: "📊",
+    color: "semantic-purple",
+    features: ["Sales analytics", "Customer insights", "Inventory reports", "Trend analysis"]
+  },
+  {
+    title: "Employee Management",
+    description: "Manage staff schedules, track performance, and control access permissions.",
+    icon: "👨‍💼",
+    color: "semantic-teal",
+    features: ["Staff scheduling", "Performance tracking", "Role permissions", "Commission tracking"]
+  },
+  {
+    title: "Payment Processing",
+    description: "Accept all payment types with secure, fast processing and competitive rates.",
+    icon: "💳",
+    color: "semantic-orange",
+    features: ["All payment types", "Secure processing", "Competitive rates", "Fraud protection"]
+  }
+];
+
+const retailTypes = [
+  {
+    name: "Fashion & Apparel",
+    description: "Clothing stores, boutiques, and fashion retailers",
+    features: ["Size & color variants", "Seasonal inventory", "Style tracking", "Trend analytics"]
+  },
+  {
+    name: "Electronics",
+    description: "Consumer electronics and tech retailers",
+    features: ["Serial number tracking", "Warranty management", "Tech support", "Product specs"]
+  },
+  {
+    name: "Home & Garden",
+    description: "Furniture, home decor, and garden centers",
+    features: ["Large item handling", "Delivery scheduling", "Room planning", "Seasonal products"]
+  },
+  {
+    name: "Health & Beauty",
+    description: "Cosmetics, wellness, and personal care",
+    features: ["Expiration tracking", "Ingredient lists", "Skin type matching", "Beauty consultations"]
+  }
+];
+---
+
+<Layout title="Retail Solutions - Tar OS">
+  <Header />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+            <div class="w-2 h-2 bg-semantic-pink rounded-full"></div>
+            <span class="text-sm font-medium text-notion-700">Retail Solutions</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-notion-900 leading-[1.1] tracking-tight mb-8">
+            Power your 
+            <span class="text-semantic-pink">retail business</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-notion-600 leading-relaxed max-w-3xl mx-auto">
+            From boutiques to big box stores, Tar OS provides the retail management tools you need to sell more, manage inventory, and grow your business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Retail Features -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Complete retail management</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            Everything you need to run a successful retail business, from inventory to customer management.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {retailFeatures.map((feature, index) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-notion-sm`}>
+                <span class="text-2xl">{feature.icon}</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold text-notion-900 mb-4 leading-tight">
+                {feature.title}
+              </h3>
+              
+              <p class="text-notion-600 mb-8 leading-relaxed text-lg">
+                {feature.description}
+              </p>
+              
+              <div class="space-y-3">
+                {feature.features.map((item) => (
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-notion-900 rounded-full mr-3 flex-shrink-0"></div>
+                    <span class="text-notion-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Retail Types -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Solutions for every retail category</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            Specialized features and workflows designed for different types of retail businesses.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {retailTypes.map((type) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300">
+              <h3 class="text-2xl font-bold text-notion-900 mb-4">{type.name}</h3>
+              <p class="text-notion-600 mb-6 text-lg">{type.description}</p>
+              
+              <div class="grid grid-cols-2 gap-3">
+                {type.features.map((feature) => (
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-semantic-pink rounded-full mr-3 flex-shrink-0"></div>
+                    <span class="text-notion-700 text-sm font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Trusted by retailers worldwide</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-semantic-pink mb-2">75K+</div>
+            <div class="text-notion-600">Retail locations</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-semantic-pink mb-2">$12B+</div>
+            <div class="text-notion-600">Annual sales volume</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-semantic-pink mb-2">150+</div>
+            <div class="text-notion-600">Countries served</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+          <h2 class="text-4xl font-bold mb-6">Ready to grow your retail business?</h2>
+          <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
+            Join thousands of retailers using Tar OS to streamline operations and increase sales.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg shadow-notion">
+              Start Free Trial
+            </button>
+            <button class="border border-notion-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-notion-800 transition-colors text-lg">
+              Request Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterSquare />
+</Layout>

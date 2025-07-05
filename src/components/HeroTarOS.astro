@@ -1,0 +1,213 @@
+---
+---
+
+<section class="pt-24 pb-20 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <!-- Game Control Icons at Top Left -->
+    <div class="absolute top-0 left-0 w-40 h-32 opacity-15">
+      <svg viewBox="0 0 160 120" class="w-full h-full text-blue-600">
+        <!-- D-Pad -->
+        <g transform="translate(15, 15)">
+          <rect x="8" y="0" width="4" height="20" fill="currentColor" opacity="0.7"/>
+          <rect x="0" y="8" width="20" height="4" fill="currentColor" opacity="0.7"/>
+        </g>
+        
+        <!-- Action Buttons (A, B, X, Y layout) -->
+        <g transform="translate(70, 10)">
+          <circle cx="0" cy="10" r="4" fill="currentColor" opacity="0.6"/>
+          <circle cx="10" cy="0" r="4" fill="currentColor" opacity="0.6"/>
+          <circle cx="20" cy="10" r="4" fill="currentColor" opacity="0.6"/>
+          <circle cx="10" cy="20" r="4" fill="currentColor" opacity="0.6"/>
+        </g>
+        
+        <!-- Analog Stick -->
+        <g transform="translate(120, 15)">
+          <circle cx="0" cy="0" r="12" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          <circle cx="3" cy="-2" r="6" fill="currentColor" opacity="0.6"/>
+        </g>
+        
+        <!-- Shoulder Buttons -->
+        <g transform="translate(20, 60)">
+          <rect x="0" y="0" width="15" height="6" rx="3" fill="currentColor" opacity="0.5"/>
+          <rect x="20" y="0" width="15" height="6" rx="3" fill="currentColor" opacity="0.5"/>
+        </g>
+        
+        <!-- Start/Select Buttons -->
+        <g transform="translate(80, 65)">
+          <rect x="0" y="0" width="8" height="4" rx="2" fill="currentColor" opacity="0.4"/>
+          <rect x="12" y="0" width="8" height="4" rx="2" fill="currentColor" opacity="0.4"/>
+        </g>
+        
+        <!-- Second Analog Stick -->
+        <g transform="translate(130, 75)">
+          <circle cx="0" cy="0" r="8" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="-2" cy="2" r="4" fill="currentColor" opacity="0.5"/>
+        </g>
+        
+        <!-- Trigger -->
+        <g transform="translate(25, 95)">
+          <path d="M0,0 Q8,0 8,6 Q8,12 0,12 Z" fill="currentColor" opacity="0.6"/>
+        </g>
+        
+        <!-- Menu Button -->
+        <g transform="translate(60, 95)">
+          <rect x="0" y="0" width="2" height="2" fill="currentColor" opacity="0.5"/>
+          <rect x="4" y="0" width="2" height="2" fill="currentColor" opacity="0.5"/>
+          <rect x="8" y="0" width="2" height="2" fill="currentColor" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="text-left space-y-8">
+        <!-- Main Headline -->
+        <h1 class="text-gray-900 leading-[1.1] tracking-tight">
+          <span class="text-5xl md:text-6xl font-bold block">Everything app.</span>
+          <span class="text-2xl md:text-3xl font-light block mt-2">AI powered.</span>
+        </h1>
+        
+        <!-- Subheading -->
+        <p class="text-lg text-gray-900 leading-relaxed font-light">
+          Commerce | Delivery | Rides | Tasks | Chat
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-6 items-start">
+          <!-- Official Google Play Badge -->
+          <a href="#" class="inline-block hover:opacity-80 transition-opacity transform hover:scale-105 duration-200">
+            <div class="w-[180px] h-[60px] flex items-center justify-center">
+              <img 
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
+                alt="Get it on Google Play" 
+                class="max-w-full max-h-full object-contain drop-shadow-lg"
+              />
+            </div>
+          </a>
+          
+          <!-- Official App Store Badge (Coming Soon) -->
+          <div class="inline-block relative cursor-not-allowed">
+            <div class="w-[180px] h-[60px] flex items-center justify-center">
+              <img 
+                src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1590969600&h=a4b914b28dab824baf057a0d2c8cbb5f" 
+                alt="Download on the App Store" 
+                class="max-w-full max-h-full object-contain opacity-40 drop-shadow-lg"
+              />
+            </div>
+            <!-- Coming Soon Overlay -->
+            <div class="absolute inset-0 bg-black bg-opacity-70 rounded-[8px] flex items-center justify-center">
+              <span class="text-white text-sm font-semibold tracking-wide">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content - Modern iPhone Mockup -->
+      <div class="relative">
+        <!-- iPhone Frame with more accurate proportions -->
+        <div class="w-72 h-[580px] bg-gray-900 rounded-[3rem] p-2 mx-auto shadow-2xl">
+          <!-- Screen -->
+          <div class="w-full h-full bg-white rounded-[2.5rem] overflow-hidden">
+            <!-- Modern iOS Status Bar -->
+            <div class="px-6 py-4 flex justify-between items-center bg-white">
+              <span class="text-sm font-semibold text-gray-900">9:41</span>
+              <div class="flex items-center space-x-1">
+                <!-- Signal bars -->
+                <div class="flex space-x-1">
+                  <div class="w-1 h-3 bg-gray-900 rounded-full"></div>
+                  <div class="w-1 h-4 bg-gray-900 rounded-full"></div>
+                  <div class="w-1 h-5 bg-gray-900 rounded-full"></div>
+                  <div class="w-1 h-6 bg-gray-900 rounded-full"></div>
+                </div>
+                <!-- WiFi -->
+                <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.07 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
+                </svg>
+                <!-- Battery -->
+                <div class="w-6 h-3 border border-gray-900 rounded-sm relative">
+                  <div class="w-4 h-2 bg-green-500 rounded-sm absolute top-0.5 left-0.5"></div>
+                  <div class="w-0.5 h-1 bg-gray-900 rounded-r absolute -right-1 top-1"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- App Header -->
+            <div class="px-6 py-4">
+              <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                  <span class="text-white font-bold">T</span>
+                </div>
+                <div>
+                  <div class="font-bold text-gray-900">Tar</div>
+                  <div class="text-sm text-gray-500">Everything app</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Service Grid -->
+            <div class="px-6 grid grid-cols-2 gap-4">
+              <!-- AI Agents -->
+              <div class="bg-purple-50 p-4 rounded-xl">
+                <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center mb-3">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+                <div class="text-sm font-semibold text-purple-900">AI Agents</div>
+                <div class="text-xs text-purple-600">3 active</div>
+              </div>
+              
+              <!-- Commerce -->
+              <div class="bg-blue-50 p-4 rounded-xl">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mb-3">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                  </svg>
+                </div>
+                <div class="text-sm font-semibold text-blue-900">Commerce</div>
+                <div class="text-xs text-blue-600">$2.4k today</div>
+              </div>
+              
+              <!-- Delivery -->
+              <div class="bg-yellow-50 p-4 rounded-xl">
+                <div class="w-8 h-8 bg-yellow-600 rounded-lg flex items-center justify-center mb-3">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div class="text-sm font-semibold text-yellow-900">Delivery</div>
+                <div class="text-xs text-yellow-600">47 orders</div>
+              </div>
+              
+              <!-- More Services -->
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="w-8 h-8 bg-gray-400 rounded-lg flex items-center justify-center mb-3">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
+                  </svg>
+                </div>
+                <div class="text-sm font-semibold text-gray-700">More</div>
+                <div class="text-xs text-gray-500">Rides, Tasks, Chat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="lg:col-span-2 pt-12 space-y-6 text-center">
+        <p class="text-sm text-gray-500 font-medium">Trusted by teams at</p>
+        
+        <!-- Company Logos -->
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
+          <div class="text-lg font-semibold text-gray-400 tracking-wide">SHOPIFY</div>
+          <div class="text-lg font-semibold text-gray-400 tracking-wide">STRIPE</div>
+          <div class="text-lg font-semibold text-gray-400 tracking-wide">AMAZON</div>
+          <div class="text-lg font-semibold text-gray-400 tracking-wide">SQUARE</div>
+          <div class="text-lg font-semibold text-gray-400 tracking-wide">PAYPAL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

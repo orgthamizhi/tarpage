@@ -1,0 +1,98 @@
+---
+const industries = [
+  {
+    title: "Restaurants",
+    description: "Full-service restaurants, quick service, food trucks, and more.",
+    image: "🍽️",
+    features: ["Kitchen display system", "Online ordering", "Delivery integration", "Menu management"]
+  },
+  {
+    title: "Retail",
+    description: "Clothing, electronics, home goods, and specialty retail stores.",
+    image: "🛍️",
+    features: ["Inventory management", "Customer profiles", "Gift cards", "Multi-location sync"]
+  },
+  {
+    title: "Beauty & Wellness",
+    description: "Salons, spas, fitness studios, and wellness centers.",
+    image: "💅",
+    features: ["Appointment booking", "Staff scheduling", "Client management", "Service packages"]
+  },
+  {
+    title: "Professional Services",
+    description: "Consultants, contractors, freelancers, and service providers.",
+    image: "💼",
+    features: ["Invoice creation", "Time tracking", "Project management", "Client portal"]
+  }
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+        Built for your industry
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Tar OS works for businesses of all sizes and industries. 
+        Get tools designed specifically for how you do business.
+      </p>
+    </div>
+
+    <!-- Industries Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {industries.map((industry) => (
+        <div class="group cursor-pointer">
+          <div class="bg-white hover:bg-gray-50 transition-all duration-300 p-8 rounded-2xl border-0 h-full flex flex-col">
+            <!-- Icon -->
+            <div class="w-20 h-20 bg-black rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-105 transition-transform duration-300">
+              <span class="text-3xl">{industry.image}</span>
+            </div>
+            
+            <!-- Content -->
+            <h3 class="text-2xl font-bold text-black mb-4 text-center leading-tight">
+              {industry.title}
+            </h3>
+            <p class="text-gray-600 mb-8 text-center leading-relaxed text-lg flex-grow">
+              {industry.description}
+            </p>
+            
+            <!-- Features -->
+            <div class="space-y-3 mb-8">
+              {industry.features.map((feature) => (
+                <div class="flex items-center justify-center">
+                  <div class="w-2 h-2 bg-black rounded-full mr-3 flex-shrink-0"></div>
+                  <span class="text-gray-700 font-medium text-center">{feature}</span>
+                </div>
+              ))}
+            </div>
+            
+            <!-- CTA -->
+            <div class="text-center mt-auto">
+              <a href="#" class="inline-flex items-center text-black font-semibold hover:gap-2 transition-all duration-300 group">
+                Learn more
+                <svg class="w-4 h-4 ml-1 group-hover:ml-2 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="mt-20 text-center">
+      <div class="bg-black rounded-2xl p-12 text-white">
+        <h3 class="text-3xl font-bold mb-4">Don't see your industry?</h3>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Tar OS is flexible enough to work for any business. Let us show you how it can work for yours.
+        </p>
+        <button class="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-lg">
+          Contact Sales
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

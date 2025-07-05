@@ -1,0 +1,133 @@
+---
+const features = [
+  {
+    icon: "🏪",
+    title: "Store Builder",
+    description: "Create beautiful, responsive stores with our drag-and-drop builder. No coding required."
+  },
+  {
+    icon: "📊",
+    title: "Analytics Dashboard",
+    description: "Track sales, customers, and performance with real-time analytics and insights."
+  },
+  {
+    icon: "💳",
+    title: "Payment Processing",
+    description: "Accept payments globally with 100+ payment methods and instant payouts."
+  },
+  {
+    icon: "📦",
+    title: "Inventory Management",
+    description: "Manage products, track stock levels, and automate reordering across channels."
+  },
+  {
+    icon: "🚚",
+    title: "Shipping & Fulfillment",
+    description: "Integrate with major carriers and automate shipping calculations and labels."
+  },
+  {
+    icon: "🔧",
+    title: "App Ecosystem",
+    description: "Extend functionality with 6,000+ apps and integrations for every business need."
+  }
+];
+---
+
+<section id="features" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+        Platform Features
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Everything you need to
+        <span class="text-primary-600">sell online</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        From store creation to global scaling, our platform provides all the tools 
+        and features you need to build a successful online business.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <div class="group p-8 rounded-2xl border border-gray-200 hover:border-primary-200 hover:shadow-lg transition-all duration-300">
+          <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+            {feature.icon}
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">
+            {feature.title}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {feature.description}
+          </p>
+          <div class="mt-6">
+            <a href="#" class="text-primary-600 font-medium hover:text-primary-700 transition-colors">
+              Learn more →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Feature Highlight -->
+    <div class="mt-20 bg-gradient-to-r from-primary-50 to-blue-50 rounded-3xl p-8 md:p-12">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-3xl font-bold text-gray-900 mb-6">
+            Scale globally with confidence
+          </h3>
+          <p class="text-lg text-gray-600 mb-8">
+            Our enterprise-grade infrastructure handles millions of transactions daily. 
+            From startups to Fortune 500 companies, we scale with your business.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <div class="text-2xl font-bold text-primary-600">99.99%</div>
+              <div class="text-sm text-gray-600">Uptime SLA</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-primary-600">150+</div>
+              <div class="text-sm text-gray-600">Countries</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-primary-600">50ms</div>
+              <div class="text-sm text-gray-600">Avg Response</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold text-primary-600">24/7</div>
+              <div class="text-sm text-gray-600">Support</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-600">Global Sales</span>
+              <span class="text-sm font-medium text-green-600">+24% today</span>
+            </div>
+            <div class="h-32 bg-gradient-to-r from-primary-100 to-blue-100 rounded-lg flex items-center justify-center">
+              <span class="text-gray-500">Interactive Chart</span>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="text-lg font-bold text-gray-900">$1.2M</div>
+                <div class="text-xs text-gray-500">Americas</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-gray-900">$890K</div>
+                <div class="text-xs text-gray-500">Europe</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-gray-900">$650K</div>
+                <div class="text-xs text-gray-500">Asia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

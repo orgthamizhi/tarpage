@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import FooterSquare from '../components/FooterSquare.astro';
+
+const serviceFeatures = [
+  {
+    title: "Appointment Scheduling",
+    description: "Online booking system with calendar integration and automated reminders.",
+    icon: "📅",
+    color: "semantic-teal",
+    features: ["Online booking", "Calendar sync", "Automated reminders", "Recurring appointments"]
+  },
+  {
+    title: "Client Management",
+    description: "Comprehensive client profiles with service history and preferences.",
+    icon: "👤",
+    color: "semantic-blue",
+    features: ["Client profiles", "Service history", "Preferences", "Communication logs"]
+  },
+  {
+    title: "Service Packages",
+    description: "Create and manage service packages, memberships, and subscription plans.",
+    icon: "📦",
+    color: "semantic-purple",
+    features: ["Service bundles", "Membership plans", "Subscriptions", "Package discounts"]
+  },
+  {
+    title: "Staff Scheduling",
+    description: "Manage staff schedules, availability, and service assignments.",
+    icon: "👥",
+    color: "semantic-green",
+    features: ["Staff calendar", "Availability tracking", "Service assignments", "Time-off management"]
+  },
+  {
+    title: "Payment & Billing",
+    description: "Flexible payment options with automated billing and invoice generation.",
+    icon: "💳",
+    color: "semantic-orange",
+    features: ["Multiple payment methods", "Automated billing", "Invoice generation", "Payment plans"]
+  },
+  {
+    title: "Analytics & Reports",
+    description: "Track business performance with detailed analytics and custom reports.",
+    icon: "📊",
+    color: "semantic-pink",
+    features: ["Revenue tracking", "Client analytics", "Staff performance", "Custom reports"]
+  }
+];
+
+const serviceTypes = [
+  {
+    name: "Health & Wellness",
+    description: "Spas, salons, fitness centers, and wellness clinics",
+    features: ["Treatment tracking", "Health records", "Wellness plans", "Progress monitoring"]
+  },
+  {
+    name: "Professional Services",
+    description: "Consultants, lawyers, accountants, and advisors",
+    features: ["Time tracking", "Project management", "Document storage", "Client communication"]
+  },
+  {
+    name: "Home Services",
+    description: "Cleaning, maintenance, repair, and home improvement",
+    features: ["Service routing", "Before/after photos", "Equipment tracking", "Quality assurance"]
+  },
+  {
+    name: "Personal Services",
+    description: "Tutoring, coaching, training, and personal development",
+    features: ["Session planning", "Progress tracking", "Resource sharing", "Goal setting"]
+  }
+];
+---
+
+<Layout title="Service Business Solutions - Tar OS">
+  <Header />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-flex items-center space-x-2 bg-surface-secondary border border-notion-200 px-4 py-2 rounded-xl shadow-notion-sm mb-8">
+            <div class="w-2 h-2 bg-semantic-teal rounded-full"></div>
+            <span class="text-sm font-medium text-notion-700">Service Solutions</span>
+          </div>
+          
+          <h1 class="text-5xl md:text-6xl font-bold text-notion-900 leading-[1.1] tracking-tight mb-8">
+            Streamline your 
+            <span class="text-semantic-teal">service business</span>
+          </h1>
+          
+          <p class="text-xl md:text-2xl text-notion-600 leading-relaxed max-w-3xl mx-auto">
+            From appointments to payments, Tar OS helps service businesses manage clients, schedule staff, and grow revenue with powerful automation tools.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Features -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Everything for service businesses</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            Comprehensive tools designed specifically for service-based businesses to manage operations and deliver exceptional client experiences.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {serviceFeatures.map((feature, index) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300 animate-fade-in" style={`animation-delay: ${index * 0.1}s`}>
+              <div class={`w-16 h-16 bg-${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-notion-sm`}>
+                <span class="text-2xl">{feature.icon}</span>
+              </div>
+              
+              <h3 class="text-2xl font-bold text-notion-900 mb-4 leading-tight">
+                {feature.title}
+              </h3>
+              
+              <p class="text-notion-600 mb-8 leading-relaxed text-lg">
+                {feature.description}
+              </p>
+              
+              <div class="space-y-3">
+                {feature.features.map((item) => (
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-notion-900 rounded-full mr-3 flex-shrink-0"></div>
+                    <span class="text-notion-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Types -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Solutions for every service industry</h2>
+          <p class="text-xl text-notion-600 max-w-3xl mx-auto">
+            Tailored features and workflows for different types of service businesses.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {serviceTypes.map((type) => (
+            <div class="bg-white rounded-2xl p-8 shadow-notion border border-notion-200 hover:shadow-notion-md transition-all duration-300">
+              <h3 class="text-2xl font-bold text-notion-900 mb-4">{type.name}</h3>
+              <p class="text-notion-600 mb-6 text-lg">{type.description}</p>
+              
+              <div class="grid grid-cols-2 gap-3">
+                {type.features.map((feature) => (
+                  <div class="flex items-center">
+                    <div class="w-2 h-2 bg-semantic-teal rounded-full mr-3 flex-shrink-0"></div>
+                    <span class="text-notion-700 text-sm font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-surface-secondary">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-notion-900 mb-6">Why service businesses choose Tar OS</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-bold text-semantic-teal mb-2">40%</div>
+            <div class="text-notion-600">Increase in bookings</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-semantic-teal mb-2">60%</div>
+            <div class="text-notion-600">Reduction in no-shows</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-semantic-teal mb-2">25%</div>
+            <div class="text-notion-600">Time saved on admin</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-surface-primary">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <div class="bg-notion-900 rounded-3xl p-12 text-white shadow-notion-xl">
+          <h2 class="text-4xl font-bold mb-6">Ready to transform your service business?</h2>
+          <p class="text-xl text-notion-300 mb-8 max-w-2xl mx-auto">
+            Join thousands of service professionals using Tar OS to streamline operations and delight clients.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="bg-white text-notion-900 px-8 py-4 rounded-xl font-semibold hover:bg-notion-100 transition-colors text-lg shadow-notion">
+              Start Free Trial
+            </button>
+            <button class="border border-notion-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-notion-800 transition-colors text-lg">
+              Book Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <FooterSquare />
+</Layout>
