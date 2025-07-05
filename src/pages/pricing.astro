@@ -19,18 +19,88 @@ import FooterTarOS from '../components/FooterTarOS.astro';
         </p>
       </div>
 
+      <!-- Currency Converter Dropdown -->
+      <div class="flex justify-end mb-8">
+        <label for="currency" class="mr-2 font-medium text-gray-700">Currency:</label>
+        <select id="currency" name="currency" class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="usd">US Dollar (USD)</option>
+          <option value="eur">Euro (EUR)</option>
+          <option value="sar">Saudi Riyal (SAR)</option>
+          <option value="zar">South African Rand (ZAR)</option>
+          <option value="inr">Indian Rupee (INR)</option>
+          <option value="jpy">Japanese Yen (JPY)</option>
+          <option value="cny">Chinese Yuan (CNY)</option>
+        </select>
+      </div>
+
+      <script is:inline>
+        const rates = {
+          usd: 1,
+          eur: 0,
+          sar: 0,
+          zar: 0,
+          inr: 0,
+          jpy: 0,
+          cny: 0
+        };
+        async function fetchRates() {
+          try {
+            const res = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=USD,EUR,SAR,ZAR,INR,JPY,CNY');
+            const data = await res.json();
+            if (data && data.rates) {
+              Object.assign(rates, data.rates);
+              updatePrices();
+            }
+          } catch (e) {
+            // fallback: keep USD only
+          }
+        }
+        function updatePrices() {
+          const currency = document.getElementById('currency').value;
+          const symbols = {
+            usd: '$',
+            eur: '€',
+            sar: '﷼',
+            zar: 'R',
+            inr: '₹',
+            jpy: '¥',
+            cny: '¥'
+          };
+          const priceMap = {
+            starter: 2,
+            pro: 5
+          };
+          for (const plan of ['starter', 'pro']) {
+            const el = document.getElementById(`price-${plan}`);
+            if (el) {
+              let converted = priceMap[plan];
+              if (currency === 'inr') {
+                converted = plan === 'starter' ? 200 : 400;
+              } else if (currency !== 'usd' && rates[currency]) {
+                converted = (priceMap[plan] * parseFloat(rates[currency])).toFixed(2);
+              }
+              el.textContent = `${symbols[currency] || '$'}${converted}`;
+            }
+          }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+          fetchRates();
+          document.getElementById('currency').addEventListener('change', updatePrices);
+        });
+      </script>
+
       <!-- Pricing Cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-        <!-- Free Plan -->
-        <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <!-- $2 Plan -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 transition-none">
           <div class="text-center mb-8">
-            <div class="text-4xl mb-4">&#127775;</div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Free</h3>
+            <div class="text-4xl mb-4">&#128176;</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Starter</h3>
             <div class="mb-4">
-              <span class="text-4xl font-bold text-gray-900">$0</span>
+              <span id="price-starter" class="text-4xl font-bold text-gray-900">$2</span>
               <span class="text-gray-600">/month</span>
             </div>
-            <p class="text-gray-600 mb-6">Perfect for getting started</p>
+            <p class="text-gray-600 mb-6">For individuals and hobbyists</p>
             <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 py-3 rounded-xl font-medium transition-colors">
               Get Started
             </button>
@@ -42,17 +112,17 @@ import FooterTarOS from '../components/FooterTarOS.astro';
             </li>
             <li class="flex items-center">
               <span class="text-green-500 mr-2">•</span>
-              <span class="text-gray-600">Up to 100 items</span>
+              <span class="text-gray-600">Up to 500 items</span>
             </li>
             <li class="flex items-center">
               <span class="text-green-500 mr-2">•</span>
-              <span class="text-gray-600">Email support</span>
+              <span class="text-gray-600">Standard support</span>
             </li>
           </ul>
         </div>
 
-        <!-- Pro Plan -->
-        <div class="bg-blue-50 border border-blue-200 rounded-2xl p-8 relative">
+        <!-- $5 Plan -->
+        <div class="bg-blue-50 border border-blue-200 rounded-2xl p-8 relative transition-none">
           <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
             <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">Popular</span>
           </div>
@@ -60,10 +130,10 @@ import FooterTarOS from '../components/FooterTarOS.astro';
             <div class="text-4xl mb-4">&#128640;</div>
             <h3 class="text-xl font-bold text-gray-900 mb-2">Pro</h3>
             <div class="mb-4">
-              <span class="text-4xl font-bold text-gray-900">$29</span>
+              <span id="price-pro" class="text-4xl font-bold text-gray-900">$5</span>
               <span class="text-gray-600">/month</span>
             </div>
-            <p class="text-gray-600 mb-6">For growing businesses</p>
+            <p class="text-gray-600 mb-6">For growing teams</p>
             <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-medium transition-colors">
               Start Free Trial
             </button>
@@ -71,7 +141,7 @@ import FooterTarOS from '../components/FooterTarOS.astro';
           <ul class="space-y-3 text-sm">
             <li class="flex items-center">
               <span class="text-green-500 mr-2">•</span>
-              <span class="text-gray-600">All features</span>
+              <span class="text-gray-600">All Starter features</span>
             </li>
             <li class="flex items-center">
               <span class="text-green-500 mr-2">•</span>
@@ -88,16 +158,16 @@ import FooterTarOS from '../components/FooterTarOS.astro';
           </ul>
         </div>
 
-        <!-- Enterprise Plan -->
-        <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <!-- Custom Plan -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 transition-none">
           <div class="text-center mb-8">
             <div class="text-4xl mb-4">&#127970;</div>
-            <h3 class="text-xl font-bold text-gray-900 mb-2">Enterprise</h3>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Custom</h3>
             <div class="mb-4">
-              <span class="text-4xl font-bold text-gray-900">$99</span>
-              <span class="text-gray-600">/month</span>
+              <span class="text-4xl font-bold text-gray-900">Contact</span>
+              <span class="text-gray-600">for pricing</span>
             </div>
-            <p class="text-gray-600 mb-6">For large teams</p>
+            <p class="text-gray-600 mb-6">For enterprises & special needs</p>
             <button class="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-xl font-medium transition-colors">
               Contact Sales
             </button>

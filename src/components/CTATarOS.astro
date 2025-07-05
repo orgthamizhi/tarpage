@@ -13,29 +13,26 @@
     <!-- Download Badges -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <!-- Official Google Play Badge -->
-      <a href="#" class="inline-block hover:opacity-80 transition-opacity transform hover:scale-105 duration-200">
-        <div class="w-[180px] h-[60px] flex items-center justify-center">
+      <a href="#" class="inline-block hover:opacity-80 transition-opacity transform hover:scale-105 duration-200 flex-1 max-w-[200px]">
+        <div class="w-full h-[60px] flex items-center justify-center">
           <img 
             src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
             alt="Get it on Google Play" 
-            class="max-w-full max-h-full object-contain drop-shadow-lg"
+            class="w-full h-full object-contain drop-shadow-lg"
           />
         </div>
       </a>
       
       <!-- Official App Store Badge (Coming Soon) -->
-      <div class="inline-block relative cursor-not-allowed">
-        <div class="w-[180px] h-[60px] flex items-center justify-center">
+      <div class="flex-1 max-w-[200px] flex flex-col items-center justify-center">
+        <div class="w-full h-[60px] flex items-center justify-center">
           <img 
             src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1590969600&h=a4b914b28dab824baf057a0d2c8cbb5f" 
             alt="Download on the App Store" 
-            class="max-w-full max-h-full object-contain opacity-40 drop-shadow-lg"
+            class="w-full h-full object-contain drop-shadow-lg opacity-40"
           />
         </div>
-        <!-- Coming Soon Overlay -->
-        <div class="absolute inset-0 bg-black bg-opacity-70 rounded-[8px] flex items-center justify-center">
-          <span class="text-white text-sm font-semibold tracking-wide">Coming Soon</span>
-        </div>
+        <span class="mt-2 text-gray-500 text-sm font-semibold tracking-wide">Coming Soon</span>
       </div>
     </div>
   </div>
