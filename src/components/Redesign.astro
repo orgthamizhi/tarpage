@@ -1,0 +1,123 @@
+---
+const features = [
+  {
+    id: 'generate',
+    title: 'Generate with AI',
+    description: 'Instantly create mockups, layouts, and content to explore a bigger option space.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>`,
+    image: '/img1.avif'
+  },
+  {
+    id: 'layouts',
+    title: 'Automated Layouts',
+    description: 'Our AI intelligently designs and arranges your content for a perfect layout.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M6 9h4v4h-4z"></path><path d="M14 9h4v4h-4z"></path><path d="M12 2c-5.523 0-10 4.477-10 10s4.477 10 10 10 10-4.477 10-10-4.477-10-10-10z"></path></svg>`,
+    image: '/img2.avif'
+  },
+  {
+    id: 'customize',
+    title: 'Instant Customization',
+    description: 'Easily tweak and refine every element to match your brand perfectly.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><path d="M12 3v1.5"/><path d="M12 21v-1.5"/><path d="M3 12h1.5"/><path d="M21 12h-1.5"/><path d="M12 12L7 7"/></svg>`,
+    image: '/img3.avif'
+  }
+];
+---
+
+<section class="py-20 sm:py-32 bg-blue-100 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div class="space-y-8">
+        <div class="fade-in-up" style="animation-delay: 0.2s;">
+          <h2 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            Build your website, powered by AI.
+          </h2>
+          <p class="mt-4 text-xl leading-8 text-gray-600">
+            Let our AI do the heavy lifting. Generate stunning, professional websites in minutes, no coding required. Explore your ideas freely and iterate quickly.
+          </p>
+        </div>
+        <dl class="space-y-6">
+          {features.map((feature, index) => (
+            <div
+              class="flex gap-x-4 cursor-pointer group feature-item p-4 -ml-4 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              data-feature-id={feature.id}
+              data-image-src={feature.image}
+              class:list={[{"text-primary-600": index === 0, "font-semibold": index === 0}]}
+            >
+              <dt class="flex-none">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-700">
+                  <Fragment set:html={feature.icon} />
+                </div>
+              </dt>
+              <dd>
+                <h3 class="text-lg font-bold leading-7 text-gray-900 feature-title" class:list={[{"text-primary-600": index === 0, "font-semibold": index === 0}]}>{feature.title}</h3>
+                <p class="mt-1 text-base leading-7 text-gray-600">{feature.description}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div class="relative fade-in-up" style="animation-delay: 0.3s;">
+        <div class="aspect-[4/3] flex items-center justify-center">
+          <img id="feature-image" src={features[0].image} alt="AI Website Builder Illustration" class="rounded-lg w-full h-full object-cover transition-opacity duration-300">
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.7s ease-out forwards;
+      opacity: 0;
+    }
+  </style>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const featureItems = document.querySelectorAll('.feature-item');
+    const featureImage = document.getElementById('feature-image');
+
+    // Set initial active state and image
+    if (featureItems.length > 0) {
+      featureItems[0].classList.add('text-primary-600', 'font-semibold');
+      featureItems[0].querySelector('.feature-title').classList.add('text-primary-600', 'font-semibold');
+      featureImage.src = featureItems[0].getAttribute('data-image-src');
+    }
+
+    featureItems.forEach(item => {
+      item.addEventListener('click', function() {
+        // Remove active class from all items
+        featureItems.forEach(i => {
+          i.classList.remove('text-primary-600', 'font-semibold');
+          i.querySelector('.feature-title').classList.remove('text-primary-600', 'font-semibold');
+        });
+
+        // Add active class to clicked item
+        this.classList.add('text-primary-600', 'font-semibold');
+        this.querySelector('.feature-title').classList.add('text-primary-600', 'font-semibold');
+
+        // Update image source with fade effect
+        const newImageSrc = this.getAttribute('data-image-src');
+        if (newImageSrc) {
+          featureImage.classList.remove('opacity-100');
+          featureImage.classList.add('opacity-0');
+          setTimeout(() => {
+            featureImage.src = newImageSrc;
+            featureImage.classList.remove('opacity-0');
+            featureImage.classList.add('opacity-100');
+          }, 300); // Match duration of transition-opacity
+        }
+      });
+    });
+  });
+</script>
